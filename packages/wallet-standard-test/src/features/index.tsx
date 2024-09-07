@@ -17,19 +17,22 @@ import {
   StandardEvents,
   StandardEventsFeature,
 } from '@wallet-standard/features';
-import { Component, ErrorBoundary, For, Match, Switch } from 'solid-js';
+import { Component, ErrorBoundary, For, lazy, Match, Switch } from 'solid-js';
 import { Button } from '~/components/ui/button';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '~/components/ui/popover';
-import EventsFeature from '~/features/EventsFeature';
-import SignAndSendTransactionFeature from '~/features/SignAndSendTransactionFeature';
-import SignMessageFeature from '~/features/SignMessageFeature';
-import SignTransactionFeature from '~/features/SignTransactionFeature';
-import ConnectFeature from './ConnectFeature';
-import DisconnectFeature from './DisconnectFeature';
+
+const EventsFeature = lazy(() => import('./EventsFeature'));
+const SignAndSendTransactionFeature = lazy(
+  () => import('./SignAndSendTransactionFeature'),
+);
+const SignMessageFeature = lazy(() => import('./SignMessageFeature'));
+const SignTransactionFeature = lazy(() => import('./SignTransactionFeature'));
+const ConnectFeature = lazy(() => import('./ConnectFeature'));
+const DisconnectFeature = lazy(() => import('./DisconnectFeature'));
 
 export type FeatureProps<F extends Wallet['features']> = {
   wallet: WalletProxy<F>;
