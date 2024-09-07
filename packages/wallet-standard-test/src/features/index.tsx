@@ -42,7 +42,7 @@ export default ((props) => {
   return (
     <Popover>
       <PopoverTrigger
-        class="h-fit w-fit p-0"
+        class="h-fit w-fit p-0 text-muted-foreground transition-colors hover:text-foreground"
         as={Button<'button'>}
         variant={'link'}
         onClick={() => {
@@ -51,7 +51,11 @@ export default ((props) => {
       >
         {props.feature}
       </PopoverTrigger>
-      <PopoverContent class={'w-fit'}>
+      <PopoverContent
+        class={
+          'backdrop z-40 w-fit bg-transparent backdrop-blur backdrop-brightness-50'
+        }
+      >
         <ErrorBoundary fallback={'Error rendering feature.'}>
           <Switch
             fallback={

@@ -105,7 +105,7 @@ export default ((props) => {
         >
           Sign Message
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent class="bg-transparent backdrop-blur-xl">
           <DialogHeader>
             <DialogTitle>Sign Message</DialogTitle>
             <DialogDescription>

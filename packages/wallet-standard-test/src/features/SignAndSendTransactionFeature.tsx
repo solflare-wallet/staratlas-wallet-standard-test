@@ -150,7 +150,7 @@ export default ((props) => {
         >
           Sign and Send Transaction
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent class="bg-transparent backdrop-blur-xl">
           <DialogHeader>
             <DialogTitle>Sign and Send Transaction</DialogTitle>
             <DialogDescription>

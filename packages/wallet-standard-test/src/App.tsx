@@ -11,6 +11,8 @@ import { createStore } from 'solid-js/store';
 import { toast } from 'solid-sonner';
 import ColorModeToggle from '~/components/ColorModeToggle';
 import { ConnectionProvider } from '~/components/connection';
+import IconAtlasA from '~/components/icons/atlas-a.svg';
+import { Button } from '~/components/ui/button';
 import { Toaster } from '~/components/ui/sonner';
 import { WalletProxy, createWalletProxy } from '~/types';
 import WalletCard from '~/WalletCard';
@@ -73,18 +75,25 @@ export default (() => {
       <Toaster closeButton={true} />
       <ColorModeScript storageType={storageManager.type} />
       <ColorModeProvider storageManager={storageManager}>
-        <div class="border-b">
+        <div class="sticky top-0 z-50 border-b backdrop-blur">
           <div class="container flex h-16 items-center justify-between">
-            <nav class="flex items-center space-x-4">
-              <ColorModeToggle />
-            </nav>
-            <div>
-              <a
-                onClick={() => {}}
-                class="cursor-pointer text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+            <div class="flex items-center">
+              <IconAtlasA class="mr-4 size-6" />
+              <span class={'text-2xl font-medium'}>
+                Star Atlas Wallet Tester
+              </span>
+            </div>
+            <div class={'flex items-center gap-4'}>
+              <Button
+                class="text-muted-foreground transition-colors hover:text-foreground"
+                variant={'link' as const}
+                onClick={() => window.open('https://play.staratlas.com/')}
               >
-                Wallet
-              </a>
+                Play
+              </Button>
+              <nav class="flex items-center space-x-4">
+                <ColorModeToggle />
+              </nav>
             </div>
           </div>
         </div>
