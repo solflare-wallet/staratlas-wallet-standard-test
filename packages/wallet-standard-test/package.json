@@ -2,8 +2,8 @@
   "name": "@staratlas/wallet-standard-test",
   "scripts": {
     "build": "vite build",
-    "watch": "vite",
-    "dev": "vite",
+    "watch": "vite preview",
+    "dev": "vite preview",
     "clean": "rimraf dist node_modules",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
