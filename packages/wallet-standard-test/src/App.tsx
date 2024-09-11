@@ -67,11 +67,7 @@ export default (() => {
   });
 
   return (
-    <ConnectionProvider
-      endpoint={
-        'https://rpc.ironforge.network/mainnet?apiKey=01J74XTM05TVY7WTMJXZ3Z348P'
-      }
-    >
+    <ConnectionProvider endpoint={import.meta.env.VITE_RPC_ENDPOINT}>
       <Toaster closeButton={true} />
       <ColorModeScript storageType={storageManager.type} />
       <ColorModeProvider storageManager={storageManager}>

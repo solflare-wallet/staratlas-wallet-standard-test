@@ -14,7 +14,8 @@ export default combineConfigs(
   cleanupConfig,
   polyfillConfig,
   {
-    base: '/wallet-standard-test/',
+    base: '/',
     resolve: { alias: { '~': path.resolve(__dirname, './src') } },
+    envDir: path.resolve(__dirname, '../../'),
   },
 ) satisfies UserConfig;
